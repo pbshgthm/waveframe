@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reunion</title>
+<meta name="description" content="Same start. Different periods. One picture, cut into strips.">
+<link rel="icon" href="/favicon.png">
+</head>
+<body data-state="idle">
+  <canvas id="c"></canvas>
+
+  <video id="v" playsinline loop preload="auto"></video>
+
+  <!-- the whole viewport stays the button, so "click anywhere" never stops
+       being true; only the invitation inside it goes away once it is answered -->
+  <button id="start" aria-label="play or pause">
+    <span class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+    <span id="hint">click anywhere to play or pause</span>
+  </button>
+
+  <!-- and a mark in the corner once it is running, so the control is still
+       visible without anything sitting over the picture -->
+  <button id="tog" aria-label="pause">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path id="tog-i" d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+
+<script type="module" src="/src/app.js"></script>
+</body>
+</html>

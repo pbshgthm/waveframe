@@ -1,0 +1,10 @@
+node_modules
+dist
+.vercel
+.DS_Store
+
+# 4K source footage — 344 MiB and 474 MiB, both past GitHub's 100 MB per-file
+# limit. The piece streams from Cloudflare R2 (media.poobesh.com) instead, and
+# these masters stay outside public/ so vite build cannot sweep them into dist.
+masters/
+public/media
