@@ -1,0 +1,15 @@
+{
+  "name": "Reunion — Waveframe",
+  "short_name": "Waveframe",
+  "description": "Same start, different periods. Eighteen strips of one video, each swinging at its own rate — and every 49 seconds they line up and the picture is whole again.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#040405",
+  "theme_color": "#040405",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

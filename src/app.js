@@ -26,12 +26,12 @@ const togI  = document.getElementById('tog-i');
 // it was composed to; a `bpm` here is taken at its word. Anything dropped on
 // the page has no such answer to hand, and gets listened to.
 // The 4K master is 344 MiB, past GitHub's 100 MB-per-file limit, so it is not
-// bundled: it lives in Cloudflare R2 and is streamed from media.poobesh.com.
+// bundled: it lives in Cloudflare R2 and is streamed from storage.poobesh.com.
 // The canvas takes it cross-origin, which taints the canvas — and costs
 // nothing, because drawImage is happy either way and nothing here ever reads a
 // pixel back. No crossorigin attribute, so no CORS policy is needed on the
 // bucket; the tempo read only ever runs on files dropped from the desktop.
-const SOURCE = { src: 'https://media.poobesh.com/diewithasmile.mp4', bpm: 78.30, beats: 4 };
+const SOURCE = { src: 'https://storage.poobesh.com/diewithasmile.mp4', bpm: 78.30, beats: 4 };
 const MIN_PULSE = 1.35;     // how far a peak must stand out to be believed
 
 // The wave is timed in bars, not seconds: a cycle is `bars` long and the top

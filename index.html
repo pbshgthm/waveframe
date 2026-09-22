@@ -3,9 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reunion</title>
-<meta name="description" content="Same start. Different periods. One picture, cut into strips.">
-<link rel="icon" href="/favicon.png">
+
+<title>Reunion — Waveframe</title>
+<meta name="description" content="Same start, different periods. Eighteen strips of one video, each swinging at its own rate — and every 49 seconds they line up and the picture is whole again.">
+<meta name="author" content="Poobesh">
+<link rel="canonical" href="https://waveframe.poobesh.com/">
+
+<!-- the piece is #040405 edge to edge, so tell the browser that before a single
+     frame is drawn: no white flash on load, no light-mode form controls, and on
+     mobile the address bar joins in rather than sitting on top as a bright band -->
+<meta name="theme-color" content="#040405">
+<meta name="color-scheme" content="dark">
+
+<link rel="icon" href="/favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- the footage is streamed from another origin, so the first play would
+     otherwise begin with a DNS lookup and a TLS handshake it could have had
+     for free while the page was still parsing. No crossorigin attribute here
+     for the same reason there is none on the video: this is not a CORS fetch -->
+<link rel="preconnect" href="https://storage.poobesh.com">
+
+<!-- og.png is the piece's own maths rendered at t = C/18 — eighteen strips, one
+     wavelength across the row — not a frame of the footage, which is not ours -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Waveframe">
+<meta property="og:url" content="https://waveframe.poobesh.com/">
+<meta property="og:title" content="Reunion — Waveframe">
+<meta property="og:description" content="Same start, different periods. Eighteen strips of one video, each swinging at its own rate — and every 49 seconds they line up and the picture is whole again.">
+<meta property="og:image" content="https://waveframe.poobesh.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Eighteen pale vertical strips on near-black, offset into a single shallow wave across the row.">
+<meta property="og:locale" content="en">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reunion — Waveframe">
+<meta name="twitter:description" content="Same start, different periods. Eighteen strips of one video, each swinging at its own rate — and every 49 seconds they line up and the picture is whole again.">
+<meta name="twitter:image" content="https://waveframe.poobesh.com/og.png">
+<meta name="twitter:image:alt" content="Eighteen pale vertical strips on near-black, offset into a single shallow wave across the row.">
+
+<!-- saved to a home screen it should open as the piece and nothing else:
+     no browser chrome, and the status bar laid over the black rather than
+     beside it. apple-mobile-web-app-capable is the deprecated spelling of
+     mobile-web-app-capable; iOS still only reads the old one -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Waveframe">
 </head>
 <body data-state="idle">
   <canvas id="c"></canvas>
